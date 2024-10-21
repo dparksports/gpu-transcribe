@@ -34,6 +34,8 @@ def transcribe_multi_speaker(audio_file):
             words = [w for w in result["segments"] if start <= w["start"] < end]
             speaker_text += " ".join([w["text"] for w in words])
         speaker_transcripts[speaker] = speaker_text.strip()
+        print(f"Speaker {speaker}: {speaker_text.strip()}")
+
     
     return speaker_transcripts
 
@@ -41,5 +43,6 @@ def transcribe_multi_speaker(audio_file):
 audio_file = "./input.wav"
 transcripts = transcribe_multi_speaker(audio_file)
 
+print(f"===================================")
 for speaker, text in transcripts.items():
     print(f"Speaker {speaker}: {text}")

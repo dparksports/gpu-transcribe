@@ -11,7 +11,7 @@ def transcribe_multi_speaker(audio_file):
     
     # Load speaker diarization pipeline
     pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization", 
-                                        use_auth_token="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")
+                                        use_auth_token="your hf access token")
     
     # Perform speaker diarization
     diarization = pipeline(audio_file)

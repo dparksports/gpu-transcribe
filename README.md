@@ -1,4 +1,4 @@
-# transcribe multiple speakers in a recorded audio or stream
+# transcribe multiple speakers in any audio
 
 - Transcribe an audio file containing multiple speakers
 - CUDA Accelerated

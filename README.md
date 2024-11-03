@@ -1,4 +1,4 @@
-# transcribe-audio
+# transcribe multiple speakers in a recorded audio or stream
 
 ## Transcribe an audio file containing multiple speakers
 

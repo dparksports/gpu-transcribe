@@ -9,13 +9,19 @@ def transcribe_multi_speaker(audio_file):
     # Transcribe audio
     result = model.transcribe(audio_file)
     
+
     # Load speaker diarization pipeline
     pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization", 
-                                        use_auth_token="your hf access token")
+                                        use_auth_token="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")
     
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(device)
+    pipeline.to(torch.device("cuda"))
+
+
     # Perform speaker diarization
     diarization = pipeline(audio_file)
-    
+
     # Create a list to store speaker segments with timestamps
     speaker_segments = []
     
